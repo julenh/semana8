@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HTML5 File Drag & Drop API</title>
+  <link rel="stylesheet" type="text/css" media="all" href="filedrag.css" />
+</head>
+<body>
+  <form id="upload" method="POST" enctype="multipart/form-data">
+      <fieldset>
+        <legend>Datos del Cliente</legend>
+        <div>
+          <label>Nombre:</label>
+          <input name="Nombre" placeholder="nombre">
+        </div>
+        <div>
+          <label>E-Mail:</label>
+          <input type="email" placeholder="e-mail">
+        </div>
+        <div>
+          <label>Telefono:</label>
+          <input type="number" min="100000000" max="999999999" placeholder="666666666">
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Libros</legend>
+        <div>
+          <select id="libros" name="Libro">
+            <option label="Blockchain: Blueprint for a New Economy" value="Blockchain: Blueprint for a New Economy">
+            <option label="R for Data Science" value="R for Data Science">
+            <option label="Fluent Python" value="Fluent Python">
+            <option label="Natural Language Processing with PyTorch" value="Natural Language Processing with PyTorch">
+            <option label="Data Algorithms" value="Data Algorithms">
+          </select>
+          <label>Cantidad(max 5)</label>
+          <input name="Cantidad" type="number" min="1" max="5" step="1"></input>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>HTML File Upload</legend>
+        <div>
+          <label for="fileselect">Elige los ficheros a subir:</label>
+          <input type="file" id="fileselect" name="Imagenes" multiple />
+          <div id="filedrag">or drop files here</div>
+        </div>
+      </fieldset>
+      <input type="button" id="enviar" value="enviar">
+    </form>
+    <div id="messages"><p>Mensajes de estado</p></div>
+    <script src="filedrag.js"></script>
+</body>
+</html>
